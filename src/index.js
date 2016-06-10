@@ -1,19 +1,39 @@
-require('main.css');
+require('./main.css');
 
 import React from 'react';
+import {render} from 'react-dom';
+import cx from 'classnames';
 
 export default class ClassnamesExample extends React.Component {
-  static propTypes = {
-    name: React.PropTypes.string,
-  };
 
   constructor(props) {
     super(props);
+    this.state = {
+      isOn: false
+    };
   }
 
+  toggleState = () => { this.setState({isOn: !this.state.isOn}); }
+
   render() {
+
+    const circleClasses = cx({
+      circle: true,
+      off: !this.state.isOn,
+      on: this.state.isOn
+    });
+
+    const textClasses = cx({
+      textOff: !this.state.isOn
+    })
+
+    console.log(circleClasses);
+
     return (
-      <div></div>
+      <div onClick={this.toggleState}>
+        <div className={circleClasses}></div>
+        <span className={textClasses}>{this.state.isOn ? 'ON' : 'OFF' }</span>
+      </div>
     );
   }
 }

@@ -1,0 +1,56 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #E6E6E6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: sans-serif;
+}
+
+#app {
+  background-color: white;
+  border-radius: 100px;
+  padding: 5px 0;
+  position: relative;
+  cursor: pointer;
+  min-width: 83px;
+  min-height: 30px;
+}
+
+span {
+  transition: all .5s ease;
+  margin: 5px;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  left: 5px;
+  transform: translateY(-70%);
+}
+
+.circle {
+  transition: all .5s ease;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+
+.textOff {
+  left: calc(100% - 45px);
+}
+
+.off {
+  left: 5px;
+  background-color: #E6E6E6;
+}
+
+.on {
+  background-color: #22DE09;
+  left: calc(100% - 35px);
+}
